@@ -1,10 +1,10 @@
-package lk.ijse.userservice;
+package lk.ijse.service_reg;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UserServiceApplicationTests {
+class ServiceRegApplicationTests {
 
     @Test
     void contextLoads() {
