@@ -13,4 +13,5 @@ public class TicketDTO {
     private String diverName;
     private String direction;
     private Double amount;
+    private String status;
 }

@@ -19,4 +19,5 @@ public class TicketEntity {
     private String diverName;
     private String direction;
     private Double amount;
+    private String status;
 }

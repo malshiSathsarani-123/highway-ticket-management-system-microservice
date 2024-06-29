@@ -32,4 +32,22 @@ public class TicketController {
                     body(exception.getMessage());
         }
     }
+    @PutMapping("/updateStatus")
+    public ResponseEntity<?> updateStatus(@RequestBody TicketDTO ticketDTO){
+        try {
+            return ResponseEntity.ok(ticketService.updateStatus(ticketDTO));
+        } catch (Exception exception) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).
+                    body(exception.getMessage());
+        }
+    }
+    @GetMapping("/retrieval")
+    public ResponseEntity<?> retrieval(){
+        try {
+            return ResponseEntity.ok(ticketService.retrieval());
+        } catch (Exception exception) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).
+                    body(exception.getMessage());
+        }
+    }
 }

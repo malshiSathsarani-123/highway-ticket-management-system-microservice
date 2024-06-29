@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59798f78-24e4-468c-8140-1528212b19c3" name="Changes" comment="create ticket create">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/dto/TicketDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/entity/TicketEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/repo/TicketRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/service/TicketService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/service/impl/TicketServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/util/Mapping.java" afterDir="false" />
+    <list default="true" id="59798f78-24e4-468c-8140-1528212b19c3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/exception/InvalidDataException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/exception/NotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/controller/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/TicketServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/TicketServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/controller/TicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/dto/TicketDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/dto/TicketDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/entity/TicketEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/entity/TicketEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/service/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/service/impl/TicketServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/service/impl/TicketServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +178,7 @@
       <option name="presentableId" value="Default" />
       <updated>1719651887635</updated>
       <workItem from="1719651888635" duration="1283000" />
-      <workItem from="1719653204727" duration="12024000" />
+      <workItem from="1719653204727" duration="13860000" />
     </task>
     <task id="LOCAL-00001" summary="create service register">
       <option name="closed" value="true" />
@@ -241,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719662412506</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="create ticket create">
+      <option name="closed" value="true" />
+      <created>1719665935180</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719665935180</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

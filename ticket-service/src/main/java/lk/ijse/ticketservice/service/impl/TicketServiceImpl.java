@@ -1,12 +1,18 @@
 package lk.ijse.ticketservice.service.impl;
 
 import lk.ijse.ticketservice.dto.TicketDTO;
+import lk.ijse.ticketservice.entity.TicketEntity;
+import lk.ijse.ticketservice.exception.NotFoundException;
 import lk.ijse.ticketservice.repo.TicketRepo;
 import lk.ijse.ticketservice.service.TicketService;
 import lk.ijse.ticketservice.util.Mapping;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -18,10 +24,26 @@ public class TicketServiceImpl implements TicketService {
     private final Mapping mapping;
 
     @Override
-    public TicketDTO crateTicket(TicketDTO ticketDTO) {
+    public ResponseEntity<?> crateTicket(TicketDTO ticketDTO) {
         ticketDTO.setId(nextTicketId());
-        return mapping.toTicketDTO(ticketRepo.save(mapping.toTicket(ticketDTO)));
+        ticketDTO.setStatus("start");
+        mapping.toTicketDTO(ticketRepo.save(mapping.toTicket(ticketDTO)));
+        return ResponseEntity.ok("Ticket saved!!!!");
 
+    }
+
+    @Override
+    public ResponseEntity<?> updateStatus(TicketDTO ticketDTO) {
+        Optional<TicketEntity> tmpTicket = ticketRepo.findById(ticketDTO.getId());
+        if (!tmpTicket.isPresent())throw new NotFoundException("Ticket NOT FOUND");
+        tmpTicket.get().setStatus(ticketDTO.getStatus());
+        return ResponseEntity.ok("Ticket status updated!!!!");
+    }
+
+    @Override
+    public ResponseEntity<?> retrieval() {
+        List<TicketEntity> ticketEntities = ticketRepo.findAll();
+        return ResponseEntity.ok(ticketEntities);
     }
 
     public String nextTicketId() {
