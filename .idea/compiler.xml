@@ -11,6 +11,7 @@
         <module name="config-server" />
         <module name="user_service" />
         <module name="service_reg" />
+        <module name="ticket-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,6 +26,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="service_reg" options="-parameters" />
+      <module name="ticket-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
       <module name="user_service" options="-parameters" />
     </option>
