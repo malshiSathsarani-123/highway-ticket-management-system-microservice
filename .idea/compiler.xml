@@ -10,6 +10,7 @@
         <module name="api-gateway" />
         <module name="config-server" />
         <module name="user_service" />
+        <module name="vehicle-service" />
         <module name="service_reg" />
         <module name="ticket-service" />
       </profile>
@@ -29,6 +30,7 @@
       <module name="ticket-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
       <module name="user_service" options="-parameters" />
+      <module name="vehicle-service" options="-parameters" />
     </option>
   </component>
 </project>

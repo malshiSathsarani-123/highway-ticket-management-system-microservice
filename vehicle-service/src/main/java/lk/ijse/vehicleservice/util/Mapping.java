@@ -1,9 +1,9 @@
-package lk.ijse.ticketservice.util;
+package lk.ijse.vehicleservice.util;
 
-import lk.ijse.ticketservice.dto.TicketDTO;
-import lk.ijse.ticketservice.dto.VehicleDTO;
-import lk.ijse.ticketservice.entity.TicketEntity;
-import lk.ijse.ticketservice.entity.VehicleEntity;
+import lk.ijse.vehicleservice.dto.TicketDTO;
+import lk.ijse.vehicleservice.dto.VehicleDTO;
+import lk.ijse.vehicleservice.entity.TicketEntity;
+import lk.ijse.vehicleservice.entity.VehicleEntity;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -34,6 +34,5 @@ public class Mapping {
     public List<VehicleDTO> toVehicleDTOList(List<VehicleEntity> vehicleEntities) {
         return mapper.map(vehicleEntities, List.class);
     }
-
 
 }
