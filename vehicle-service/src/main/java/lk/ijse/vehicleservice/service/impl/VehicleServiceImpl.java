@@ -1,5 +1,8 @@
 package lk.ijse.vehicleservice.service.impl;
 
+import lk.ijse.vehicleservice.dto.VehicleDTO;
+import lk.ijse.vehicleservice.entity.VehicleEntity;
+import lk.ijse.vehicleservice.exception.NotFoundException;
 import lk.ijse.vehicleservice.repo.VehicleRepo;
 import lk.ijse.vehicleservice.service.VehicleService;
 import lk.ijse.vehicleservice.util.Mapping;
@@ -20,6 +23,21 @@ public class VehicleServiceImpl implements VehicleService {
     @Autowired
     private final Mapping mapping;
 
+    @Override
+    public ResponseEntity<?> crateTicket(VehicleDTO vehicleDTO) {
+        vehicleRepo.save(mapping.toVehicle(vehicleDTO));
+        return ResponseEntity.ok("Vehicle Registered!!!!");
+    }
+
+    @Override
+    public ResponseEntity<?> updateVehicle(VehicleDTO vehicleDTO) {
+        Optional<VehicleEntity> tmpVehicle = vehicleRepo.findById(vehicleDTO.getVehicleNumber());
+        if (!tmpVehicle.isPresent())throw new NotFoundException("VEHICLE NOT FOUND");
+        tmpVehicle.get().setColor(vehicleDTO.getColor());
+        tmpVehicle.get().setProvince(vehicleDTO.getProvince());
+        tmpVehicle.get().setDescription(vehicleDTO.getDescription());
+        return ResponseEntity.ok("VEHICLE INFORMATION UPDATED!!!!");
+    }
 //    @Override
 //    public ResponseEntity<?> crateTicket(TicketDTO ticketDTO) {
 //        ticketDTO.setId(nextTicketId());
@@ -42,20 +60,4 @@ public class VehicleServiceImpl implements VehicleService {
 //        List<TicketEntity> ticketEntities = ticketRepo.findAll();
 //        return ResponseEntity.ok(ticketEntities);
 //    }
-
-    public String nextVehicleId() {
-        String maxId = vehicleRepo.findMaxId();
-        if (maxId != null){
-            return generateNextVehicleId(maxId);
-        }else {
-            return "V-001";
-        }
-    }
-
-    private static String generateNextVehicleId(String lastVehicleId) {
-        String numericPart = lastVehicleId.substring(2);
-        int nextNumericValue = Integer.parseInt(numericPart) + 1;
-        String nextNumericPart = String.format("%03d", nextNumericValue);
-        return "T-" + nextNumericPart;
-    }
 }

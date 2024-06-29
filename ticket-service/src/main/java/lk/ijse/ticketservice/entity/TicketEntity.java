@@ -1,8 +1,6 @@
 package lk.ijse.ticketservice.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,9 +13,12 @@ import lombok.NoArgsConstructor;
 public class TicketEntity {
     @Id
     private String id;
-    private String vehicleNumber;
     private String diverName;
     private String direction;
     private Double amount;
     private String status;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "vehicleNumber")
+    private VehicleEntity vehicleEntity;
 }

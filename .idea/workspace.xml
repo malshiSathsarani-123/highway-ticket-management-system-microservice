@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59798f78-24e4-468c-8140-1528212b19c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config-server/src/main/resources/config/vehicle-service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/lk/ijse/vehicleservice/controller/VehicleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/lk/ijse/vehicleservice/dto/VehicleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/lk/ijse/vehicleservice/entity/VehicleEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/entity/TicketEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/entity/TicketEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/java/lk/ijse/vehicleservice/controller/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/lk/ijse/vehicleservice/controller/VehicleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/java/lk/ijse/vehicleservice/service/VehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/lk/ijse/vehicleservice/service/VehicleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/java/lk/ijse/vehicleservice/service/impl/VehicleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/lk/ijse/vehicleservice/service/impl/VehicleServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +99,8 @@
       <recent name="G:\3rd semester\LayeredArchitecture2\highway-ticket-management-system-microservice\ticket-service\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lk.ijse.ticketservice.dto" />
+      <recent name="lk.ijse.ticketservice.entity" />
       <recent name="lk.ijse.vehicleservice.dto" />
       <recent name="lk.ijse.ticketservice" />
       <recent name="lk.ijse.user_service" />
@@ -191,7 +187,7 @@
       <updated>1719651887635</updated>
       <workItem from="1719651888635" duration="1283000" />
       <workItem from="1719653204727" duration="15993000" />
-      <workItem from="1719669861798" duration="1379000" />
+      <workItem from="1719669861798" duration="2796000" />
     </task>
     <task id="LOCAL-00001" summary="create service register">
       <option name="closed" value="true" />
@@ -265,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719667844012</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="create vehicle service">
+      <option name="closed" value="true" />
+      <created>1719671553113</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719671553113</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +284,8 @@
     <MESSAGE value="create ticket service" />
     <MESSAGE value="create ticket create" />
     <MESSAGE value="done update ticket status and retrieval tickets information" />
-    <option name="LAST_COMMIT_MESSAGE" value="done update ticket status and retrieval tickets information" />
+    <MESSAGE value="create vehicle service" />
+    <option name="LAST_COMMIT_MESSAGE" value="create vehicle service" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
