@@ -7,6 +7,6 @@ public interface VehicleService {
     ResponseEntity<?> crateTicket(VehicleDTO vehicleDTO);
 
     ResponseEntity<?> updateVehicle(VehicleDTO vehicleDTO);
-//
-//    ResponseEntity<?> retrieval();
+
+    Object retrieval();
 }

@@ -40,13 +40,13 @@ public class VehicleController {
                     body(exception.getMessage());
         }
     }
-//    @GetMapping("/retrieval")
-//    public ResponseEntity<?> retrieval(){
-//        try {
-//            return ResponseEntity.ok(ticketService.retrieval());
-//        } catch (Exception exception) {
-//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).
-//                    body(exception.getMessage());
-//        }
-//    }
+    @GetMapping("/retrieval")
+    public ResponseEntity<?> retrieval(){
+        try {
+            return ResponseEntity.ok(vehicleService.retrieval());
+        } catch (Exception exception) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).
+                    body(exception.getMessage());
+        }
+    }
 }
