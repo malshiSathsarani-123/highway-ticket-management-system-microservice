@@ -21,4 +21,11 @@ public class VehicleEntity {
 
     @OneToMany(mappedBy = "vehicleEntity",cascade = CascadeType.ALL)
     private List<TicketEntity> ticketEntities;
+
+    public VehicleEntity(String vehicleNumber, String province, String description, String color) {
+        this.vehicleNumber = vehicleNumber;
+        this.province = province;
+        this.description = description;
+        this.color = color;
+    }
 }

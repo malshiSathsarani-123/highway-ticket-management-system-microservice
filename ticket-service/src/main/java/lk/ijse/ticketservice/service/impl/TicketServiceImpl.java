@@ -2,8 +2,10 @@ package lk.ijse.ticketservice.service.impl;
 
 import lk.ijse.ticketservice.dto.TicketDTO;
 import lk.ijse.ticketservice.entity.TicketEntity;
+import lk.ijse.ticketservice.entity.VehicleEntity;
 import lk.ijse.ticketservice.exception.NotFoundException;
 import lk.ijse.ticketservice.repo.TicketRepo;
+import lk.ijse.ticketservice.repo.VehicleRepo;
 import lk.ijse.ticketservice.service.TicketService;
 import lk.ijse.ticketservice.util.Mapping;
 import lombok.RequiredArgsConstructor;
@@ -21,13 +23,19 @@ public class TicketServiceImpl implements TicketService {
     private final TicketRepo ticketRepo;
 
     @Autowired
+    private final VehicleRepo vehicleRepo;
+
+    @Autowired
     private final Mapping mapping;
 
     @Override
     public ResponseEntity<?> crateTicket(TicketDTO ticketDTO) {
         ticketDTO.setId(nextTicketId());
         ticketDTO.setStatus("start");
-        mapping.toTicketDTO(ticketRepo.save(mapping.toTicket(ticketDTO)));
+        TicketEntity ticket = mapping.toTicket(ticketDTO);
+        Optional<VehicleEntity> byId = vehicleRepo.findById(ticketDTO.getVehicleNumber());
+        ticket.setVehicleEntity(new VehicleEntity(ticketDTO.getVehicleNumber(),byId.get().getProvince(),byId.get().getDescription(),byId.get().getColor()));
+        mapping.toTicketDTO(ticketRepo.save(ticket));
         return ResponseEntity.ok("Ticket saved!!!!");
 
     }
