@@ -54,18 +54,5 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).
                     body(exception.getMessage());
         }
-//        try {
-//            userService.updateUser(signUp,id);
-//            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("User Details Updated Successfully.");
-//        } catch (NotFoundException exception) {
-//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
-//        } catch (DataIntegrityViolationException exception) {
-//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).
-//                    body(exception.getMessage());
-//        } catch (Exception exception) {
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).
-//                    body("Internal server error | User Details Updated Unsuccessfully.\nMore Reason\n"
-//                            +exception.getMessage());
-//        }
     }
 }
