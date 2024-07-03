@@ -4,12 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59798f78-24e4-468c-8140-1528212b19c3" name="Changes" comment="get all vehicle">
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/repo/VehicleRepo.java" afterDir="false" />
+    <list default="true" id="59798f78-24e4-468c-8140-1528212b19c3" name="Changes" comment="get relate ticket and vehicle">
+      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/dto/SignIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/dto/SignUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/entity/UserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/enums/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/exception/InvalidCredentialException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/exception/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/repo/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/service/impl/UserServiceIMPL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/util/Mapping.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/entity/VehicleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/entity/VehicleEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/service/impl/TicketServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/lk/ijse/ticketservice/service/impl/TicketServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticket-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/UserServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,15 +95,15 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/3rd semester/LayeredArchitecture2/highway-ticket-management-system-microservice/vehicle-service/src/main/java/lk/ijse/vehicleservice",
+    "last_opened_file_path": "C:/Users/malshis/Desktop/highway/user_service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "spring.configuration.checksum": "e8e86e40f792001a18e58ac848dae0bb",
@@ -108,18 +120,21 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\malshis\Desktop\highway\user_service" />
+      <recent name="C:\Users\malshis\Desktop\highway\user_service\src\main\java\lk\ijse\user_service" />
       <recent name="G:\3rd semester\LayeredArchitecture2\highway-ticket-management-system-microservice\vehicle-service\src\main\java\lk\ijse\vehicleservice" />
       <recent name="G:\3rd semester\LayeredArchitecture2\highway-ticket-management-system-microservice\config-server\src\main\resources\config" />
       <recent name="G:\3rd semester\LayeredArchitecture2\highway-ticket-management-system-microservice\vehicle-service\src\main\resources" />
-      <recent name="G:\3rd semester\LayeredArchitecture2\highway-ticket-management-system-microservice\ticket-service\src\main\java\lk\ijse\ticketservice" />
-      <recent name="G:\3rd semester\LayeredArchitecture2\highway-ticket-management-system-microservice\ticket-service\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\malshis\Desktop\highway\user_service\src\main\java\lk\ijse\user_service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lk.ijse.ticketservice.repo" />
       <recent name="lk.ijse.ticketservice.dto" />
       <recent name="lk.ijse.ticketservice.entity" />
       <recent name="lk.ijse.vehicleservice.dto" />
       <recent name="lk.ijse.ticketservice" />
-      <recent name="lk.ijse.user_service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -131,7 +146,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TicketServiceApplication">
+  <component name="RunManager" selected="Spring Boot.UserServiceApplication (1)">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="highway-ticket-management-system-microservice" />
       <method v="2">
@@ -173,23 +188,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="user.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="lk.ijse.user.UserApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="user_service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="lk.ijse.user_service.UserServiceApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="user-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="lk.ijse.userservice.UserServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -225,7 +226,8 @@
       <workItem from="1719821961016" duration="576000" />
       <workItem from="1719823820783" duration="578000" />
       <workItem from="1719892087307" duration="24000" />
-      <workItem from="1719916014286" duration="4182000" />
+      <workItem from="1719916014286" duration="4389000" />
+      <workItem from="1719979569497" duration="3879000" />
     </task>
     <task id="LOCAL-00001" summary="create service register">
       <option name="closed" value="true" />
@@ -315,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719919779879</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="get relate ticket and vehicle">
+      <option name="closed" value="true" />
+      <created>1719920954231</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1719920954231</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +342,8 @@
     <MESSAGE value="done update ticket status and retrieval tickets information" />
     <MESSAGE value="create vehicle service" />
     <MESSAGE value="get all vehicle" />
-    <option name="LAST_COMMIT_MESSAGE" value="get all vehicle" />
+    <MESSAGE value="get relate ticket and vehicle" />
+    <option name="LAST_COMMIT_MESSAGE" value="get relate ticket and vehicle" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
