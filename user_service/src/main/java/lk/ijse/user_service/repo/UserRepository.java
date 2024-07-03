@@ -14,4 +14,6 @@ public interface UserRepository extends JpaRepository<UserEntity,String> {
 
     @Query("SELECT MAX(u.id) FROM UserEntity u")
     String findMaxId();
+
+    boolean existsByEmail(String email);
 }

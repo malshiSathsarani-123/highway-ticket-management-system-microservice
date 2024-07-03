@@ -24,7 +24,6 @@ public class UserController {
         return "User Service works fine ";
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/signUp")
     public ResponseEntity<?> registerUser(@RequestBody SignUp signUp) {
         try {
@@ -35,7 +34,6 @@ public class UserController {
         }
     }
 
-
     @PostMapping("/signIn")
     public ResponseEntity<?> verifyUser(@RequestBody SignIn signIn){
         try {
@@ -45,5 +43,29 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).
                     body(exception.getMessage());
         }
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<?> updateUser(@RequestBody SignUp signUp, @PathVariable ("id") String id) {
+        try {
+            userService.updateUser(signUp,id);
+            return ResponseEntity.status(HttpStatus.CREATED).body("User Details Verify Successfully.");
+        } catch (Exception exception) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).
+                    body(exception.getMessage());
+        }
+//        try {
+//            userService.updateUser(signUp,id);
+//            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("User Details Updated Successfully.");
+//        } catch (NotFoundException exception) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
+//        } catch (DataIntegrityViolationException exception) {
+//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).
+//                    body(exception.getMessage());
+//        } catch (Exception exception) {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).
+//                    body("Internal server error | User Details Updated Unsuccessfully.\nMore Reason\n"
+//                            +exception.getMessage());
+//        }
     }
 }

@@ -4,24 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59798f78-24e4-468c-8140-1528212b19c3" name="Changes" comment="get relate ticket and vehicle">
-      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/dto/SignIn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/dto/SignUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/entity/UserEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/enums/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/exception/InvalidCredentialException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/exception/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/repo/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/service/impl/UserServiceIMPL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/util/Mapping.java" afterDir="false" />
+    <list default="true" id="59798f78-24e4-468c-8140-1528212b19c3" name="Changes" comment="done user signing and signup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticket-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/repo/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/service/impl/UserServiceIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/src/main/java/lk/ijse/user_service/service/impl/UserServiceIMPL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -227,7 +216,7 @@
       <workItem from="1719823820783" duration="578000" />
       <workItem from="1719892087307" duration="24000" />
       <workItem from="1719916014286" duration="4389000" />
-      <workItem from="1719979569497" duration="3879000" />
+      <workItem from="1719979569497" duration="5209000" />
     </task>
     <task id="LOCAL-00001" summary="create service register">
       <option name="closed" value="true" />
@@ -325,7 +314,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719920954231</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="done user signing and signup">
+      <option name="closed" value="true" />
+      <created>1719984020349</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1719984020349</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,7 +340,8 @@
     <MESSAGE value="create vehicle service" />
     <MESSAGE value="get all vehicle" />
     <MESSAGE value="get relate ticket and vehicle" />
-    <option name="LAST_COMMIT_MESSAGE" value="get relate ticket and vehicle" />
+    <MESSAGE value="done user signing and signup" />
+    <option name="LAST_COMMIT_MESSAGE" value="done user signing and signup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

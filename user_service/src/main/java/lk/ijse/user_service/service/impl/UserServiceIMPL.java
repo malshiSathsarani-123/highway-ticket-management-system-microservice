@@ -43,6 +43,28 @@ public class UserServiceIMPL implements UserService {
     }
 
     @Override
+    public void updateUser(SignUp signUp, String id) throws Exception {
+        try {
+            Optional<UserEntity> userOptional = userRepository.findById(id);
+            if (!userOptional.isPresent()) throw new NotFoundException("User Not Found");
+
+            UserEntity user = userOptional.get();
+
+            if (!user.getEmail().equals(signUp.getEmail())) {
+                if (userRepository.existsByEmail(signUp.getEmail())) {
+                    throw new Exception("Email is already in use by another user");
+                }
+            }
+            user.setName(signUp.getName());
+            user.setEmail(signUp.getEmail());
+            user.setPassword(bCryptPasswordEncoder.encode(signUp.getPassword()));
+            user.setRole(signUp.getRole());
+        } catch (DataIntegrityViolationException exception) {
+            throw new Exception("User Already Exists with this email");
+        }
+    }
+
+    @Override
     public void verifyUser(SignIn signIn) {
         Optional<UserEntity> userOptional = userRepository.findByEmail(signIn.getEmail());
         if (userOptional.isEmpty()) throw new NotFoundException("User Not Found");
