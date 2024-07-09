@@ -8,6 +8,7 @@ import lk.ijse.vehicleservice.service.VehicleService;
 import lk.ijse.vehicleservice.util.Mapping;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -28,17 +29,25 @@ public class VehicleServiceImpl implements VehicleService {
         vehicleRepo.save(mapping.toVehicle(vehicleDTO));
         return ResponseEntity.ok("Vehicle Registered!!!!");
     }
-
     @Override
     public ResponseEntity<?> updateVehicle(VehicleDTO vehicleDTO) {
-        System.out.println(vehicleDTO.toString());
-        Optional<VehicleEntity> tmpVehicle = vehicleRepo.findById(vehicleDTO.getVehicleNumber());
-        System.out.println(tmpVehicle);
-        if (!tmpVehicle.isPresent())throw new NotFoundException("VEHICLE NOT FOUND");
-        tmpVehicle.get().setColor(vehicleDTO.getColor());
-        tmpVehicle.get().setProvince(vehicleDTO.getProvince());
-        tmpVehicle.get().setDescription(vehicleDTO.getDescription());
-        return ResponseEntity.ok("VEHICLE INFORMATION UPDATED!!!!");
+        try {
+            Optional<VehicleEntity> tmpVehicle = vehicleRepo.findById(vehicleDTO.getVehicleNumber());
+            if (!tmpVehicle.isPresent()) {
+                throw new NotFoundException("VEHICLE NOT FOUND");
+            }
+
+            VehicleEntity vehicleEntity = tmpVehicle.get();
+            vehicleEntity.setColor(vehicleDTO.getColor());
+            vehicleEntity.setProvince(vehicleDTO.getProvince());
+            vehicleEntity.setDescription(vehicleDTO.getDescription());
+
+            vehicleRepo.save(vehicleEntity);
+
+            return ResponseEntity.ok("VEHICLE INFORMATION UPDATED!!!!");
+        } catch (DataIntegrityViolationException exception) {
+            return ResponseEntity.ok("VEHICLE INFORMATION NOT UPDATED!!!!");
+        }
     }
 
     @Override
