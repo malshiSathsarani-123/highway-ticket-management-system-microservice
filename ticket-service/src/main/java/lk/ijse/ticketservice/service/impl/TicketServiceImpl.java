@@ -10,6 +10,7 @@ import lk.ijse.ticketservice.service.TicketService;
 import lk.ijse.ticketservice.util.Mapping;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -42,10 +43,20 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public ResponseEntity<?> updateStatus(TicketDTO ticketDTO) {
-        Optional<TicketEntity> tmpTicket = ticketRepo.findById(ticketDTO.getId());
-        if (!tmpTicket.isPresent())throw new NotFoundException("Ticket NOT FOUND");
-        tmpTicket.get().setStatus(ticketDTO.getStatus());
-        return ResponseEntity.ok("Ticket status updated!!!!");
+        try {
+            Optional<TicketEntity> tmpTicket = ticketRepo.findById(ticketDTO.getId());
+            if (!tmpTicket.isPresent()){
+                throw new NotFoundException("Ticket NOT FOUND");
+            }
+            TicketEntity ticketEntity = tmpTicket.get();
+            ticketEntity.setStatus(ticketDTO.getStatus());
+
+            ticketRepo.save(ticketEntity);
+
+            return ResponseEntity.ok("TICKET INFORMATION UPDATED!!!!");
+        } catch (DataIntegrityViolationException exception) {
+            return ResponseEntity.ok("TICKET INFORMATION NOT UPDATED!!!!");
+        }
     }
 
     @Override
