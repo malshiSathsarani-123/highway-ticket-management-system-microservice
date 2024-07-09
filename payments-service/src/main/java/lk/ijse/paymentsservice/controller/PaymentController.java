@@ -1,6 +1,7 @@
 package lk.ijse.paymentsservice.controller;
 
 import lk.ijse.paymentsservice.dto.PaymentDTO;
+import lk.ijse.paymentsservice.exception.NotFoundException;
 import lk.ijse.paymentsservice.service.PaymentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,13 +20,22 @@ public class PaymentController {
     }
 
     @PostMapping
-    public ResponseEntity<?> registerUser(@RequestBody PaymentDTO paymentDTO) {
+    public ResponseEntity<?> purchasePayment(@RequestBody PaymentDTO paymentDTO) {
         try {
-            return ResponseEntity.ok(paymentService.savePayment(paymentDTO));
+            return ResponseEntity.ok(paymentService.purchasePayment(paymentDTO));
         } catch (Exception exception) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).
-                    body(exception.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error | Payment failed.");
         }
     }
 
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<?> getPaymentById(@PathVariable("id") String id) {
+        try {
+            return ResponseEntity.ok(paymentService.getPaymentById(id));
+        } catch (NotFoundException exception) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
+        } catch (Exception exception) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error | Failed to fetch Payment Details.");
+        }
+    }
 }

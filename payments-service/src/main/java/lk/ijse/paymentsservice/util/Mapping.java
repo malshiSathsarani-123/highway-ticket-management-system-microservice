@@ -18,6 +18,7 @@ public class Mapping {
         return  mapper.map(paymentEntity, PaymentDTO.class);
     }
     public PaymentEntity toPayment(PaymentDTO paymentDTO) {
+        System.out.println(paymentDTO);
         return  mapper.map(paymentDTO, PaymentEntity.class);
     }
     public List<PaymentDTO> toPaymentDTOList(List<PaymentEntity> paymentEntities) {

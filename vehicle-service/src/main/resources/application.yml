@@ -7,7 +7,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: 1234
+    password: root
     url: jdbc:mysql://localhost:3306/highway?createDatabaseIfNotExist=true
     hikari:
       maximum-pool-size: 5
