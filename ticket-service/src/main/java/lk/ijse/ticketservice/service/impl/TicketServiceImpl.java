@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -31,14 +32,20 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public ResponseEntity<?> crateTicket(TicketDTO ticketDTO) {
-        ticketDTO.setId(nextTicketId());
-        ticketDTO.setStatus("start");
-        TicketEntity ticket = mapping.toTicket(ticketDTO);
-        Optional<VehicleEntity> byId = vehicleRepo.findById(ticketDTO.getVehicleNumber());
-        ticket.setVehicleEntity(new VehicleEntity(ticketDTO.getVehicleNumber(),byId.get().getProvince(),byId.get().getDescription(),byId.get().getColor()));
-        mapping.toTicketDTO(ticketRepo.save(ticket));
-        return ResponseEntity.ok("Ticket saved!!!!");
-
+        try {
+            ticketDTO.setId(nextTicketId());
+            ticketDTO.setStatus("start");
+            TicketEntity ticket = mapping.toTicket(ticketDTO);
+            Optional<VehicleEntity> byId = vehicleRepo.findById(ticketDTO.getVehicleNumber());
+            if (!byId.isPresent()) {
+                return ResponseEntity.ok("VEHICLE IS NOT EXIST!!!!");
+            }
+            ticket.setVehicleEntity(new VehicleEntity(ticketDTO.getVehicleNumber(),byId.get().getProvince(),byId.get().getDescription(),byId.get().getColor()));
+            mapping.toTicketDTO(ticketRepo.save(ticket));
+            return ResponseEntity.ok("TICKET SAVED!!!!");
+        } catch (DataIntegrityViolationException exception) {
+            return ResponseEntity.ok("TICKET NOT SAVED!!!!");
+        }
     }
 
     @Override
@@ -61,10 +68,30 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public ResponseEntity<?> retrieval() {
-        List<TicketEntity> ticketEntities = ticketRepo.findAll();
-        return ResponseEntity.ok(ticketEntities);
+        try {
+            List<TicketEntity> ticketEntities = ticketRepo.findAll();
+            List<TicketDTO> ticketDTOS = mapToDTOList(ticketEntities);
+            return ResponseEntity.ok(ticketDTOS);
+        }catch (DataIntegrityViolationException exception){
+            return ResponseEntity.ok("TICKET INFORMATION RETRIEVAL FAILED!!!!");
+        }
+    }
+    public TicketDTO mapToDTO(TicketEntity ticketEntity) {
+        return new TicketDTO(
+                ticketEntity.getId(),
+                ticketEntity.getVehicleEntity().getVehicleNumber(),
+                ticketEntity.getDiverName(),
+                ticketEntity.getDirection(),
+                ticketEntity.getAmount(),
+                ticketEntity.getStatus()
+        );
     }
 
+    public List<TicketDTO> mapToDTOList(List<TicketEntity> ticketEntities) {
+        return ticketEntities.stream()
+                .map(this::mapToDTO)
+                .collect(Collectors.toList());
+    }
     public String nextTicketId() {
         String maxId = ticketRepo.findMaxId();
         if (maxId != null){

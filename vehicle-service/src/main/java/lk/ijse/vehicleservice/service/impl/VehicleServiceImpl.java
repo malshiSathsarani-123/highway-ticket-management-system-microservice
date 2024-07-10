@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -51,9 +52,29 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public Object retrieval() {
-        List<VehicleEntity> vehicleEntities = vehicleRepo.findAll();
-        return ResponseEntity.ok(vehicleEntities);
+    public ResponseEntity<?> retrieval() {
+        try {
+            List<VehicleEntity> vehicleEntities = vehicleRepo.findAll();
+            List<VehicleDTO> vehicleDTOS = mapToDTOList(vehicleEntities);
+            return ResponseEntity.ok(vehicleDTOS);
+        }catch (DataIntegrityViolationException exception){
+            return ResponseEntity.ok("VEHICLE INFORMATION RETRIEVAL FAILED!!!!");
+        }
+    }
+
+    public VehicleDTO mapToDTO(VehicleEntity vehicleEntity) {
+        return new VehicleDTO(
+                vehicleEntity.getVehicleNumber(),
+                vehicleEntity.getProvince(),
+                vehicleEntity.getDescription(),
+                vehicleEntity.getColor()
+        );
+    }
+
+    public List<VehicleDTO> mapToDTOList(List<VehicleEntity> vehicleEntities) {
+        return vehicleEntities.stream()
+                .map(this::mapToDTO)
+                .collect(Collectors.toList());
     }
 
 }

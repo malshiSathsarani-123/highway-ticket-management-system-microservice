@@ -8,5 +8,5 @@ public interface VehicleService {
 
     ResponseEntity<?> updateVehicle(VehicleDTO vehicleDTO);
 
-    Object retrieval();
+    ResponseEntity<?> retrieval();
 }
